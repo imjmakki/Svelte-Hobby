@@ -4,6 +4,18 @@
 	import Button from './Button.svelte';
 	import { saveToLS, readFromLS } from './storage';
 	import { generate } from 'shortid';
+
+	let id;
+	let name = '';
+	let weight = 3;
+	let description = '';
+	let hobbies = JSON.parse(readFromLS('hobbies')) || [];
+	let isEditMode = false;
+
+	let elmToFocus;
+	onMount(function() {
+		elmToFocus.focus();
+	});
 </script>
 
 <main>
