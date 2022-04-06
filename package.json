@@ -18,6 +18,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^2.0.0"
+    "shortid": "^2.2.16",
+    "sirv-cli": "^2.0.0",
+    "svelte-feather-icons": "^4.0.0"
   }
 }
