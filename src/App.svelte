@@ -152,7 +152,7 @@
 		</div>
 	</div>
 	<footer>
-		<p>Made with ❤️ by <a href="<https://twitter.com/tapasadhikary>">Tapas Adhikary</a>.</p>
+		<p>Made with ❤️ by <a href="<https://twitter.com/mjalanbaki>">Mohamad J. Makki</a>.</p>
 	</footer>
 </main>
 
