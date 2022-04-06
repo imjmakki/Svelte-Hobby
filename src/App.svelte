@@ -109,9 +109,53 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>Welcome to the Hobby Land</h1>
+	<div class="container">
+		<div class="hobby-form">
+			<div>
+				<label for="name"></label>
+				<input type="text" id="name" bind:value={name} placeholder="What's your Hobby?" bind:this={elmToFocus} />
+			</div>
+			<div>
+				<label for="description"></label>
+				<textarea rows="3" cols="35" id="description" bind:value ={description}  placeholder="Tell us a bit more about it"/>
+			</div>
+			<div class="weight-div">
+				<label for="weight">How serious are you about it?(1 - Least to 10 - Most)</label>
+				<input type="range" min="1" max="10" id="weight" bind:value={weight} />
+				<p style="background-color: {getHobbyLook(weight).background}; color: {getHobbyLook(weight).color};">{weight}</p>
+			</div>
+			{#if isEditMode}
+				<Button on:click={reset} negative={true}>Cancel</Button>
+				<Button on:click={addHobby}>Edit Hobby</Button>
+			{:else}
+				<Button on:click={addHobby} isDisabled={name.trim().length === 0}>Add Hobby</Button>
+			{/if}
+		</div>
+		<div>
+			<h2>Hobbies</h2>
+			<h3>Track Your Hobbies to Get Better</h3>
+			<div class="hobby-list">
+				{#if hobbies.length === 0}
+					<p class="no-hobby">
+						No Hobbies? Oh dear, please add one to track.
+					</p>
+				{:else}
+					{#each hobbies as hobby}
+						<Hobby
+								hobby={hobby}
+								deleteHobby={() => deleteHobby(hobby.id)}
+								editMode = {() => editMode(hobby.id)} />
+					{/each}
+				{/if}
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>Made with ❤️ by <a href="<https://twitter.com/tapasadhikary>">Tapas Adhikary</a>.</p>
+	</footer>
 </main>
+
 
 <style>
 	main {
