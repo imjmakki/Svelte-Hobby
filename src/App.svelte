@@ -1,5 +1,9 @@
 <script>
-	export let name;
+	import { onMount } from 'svelte';
+	import Hobby from './Hobby.svelte';
+	import Button from './Button.svelte';
+	import { saveToLS, readFromLS } from './storage';
+	import { generate } from 'shortid';
 </script>
 
 <main>
