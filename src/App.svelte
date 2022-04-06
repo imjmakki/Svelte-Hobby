@@ -161,17 +161,74 @@
 	main {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+		margin: 0;
 	}
-
 	h1 {
 		color: #ff3e00;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+		margin: 0;
 	}
-
+	p {
+		margin: 0.5rem;
+	}
+	textarea {
+		width: 100%;
+	}
+	.container {
+		display: flex;
+		justify-content: space-around;
+		margin: 1rem auto auto auto;
+	}
+	@media screen and (max-width: 720px) {
+		.container {
+			flex-direction: column;
+		}
+	}
+	.hobby-form {
+		padding: 1rem;
+		background-color: #ebebeb;
+		max-height: 381px;
+		min-width: 320px;
+	}
+	.hobby-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+	}
+	.no-hobby {
+		padding: 1em;
+		border: 1px solid;
+		border-radius: 4px;
+		background-color: #ebebeb;
+	}
+	.weight-div {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+	}
+	.weight-div p {
+		width: 2rem;
+		height: 2rem;
+		border: 1px solid #000;
+		border-radius: 35px;
+		padding: 1rem;
+		font-size: 1.5rem;
+	}
+	input[type="range"] {
+		padding: 0;
+		margin-top: 0.4em;
+		width: 100%;
+	}
+	input[type="text"] {
+		width: 100%;
+	}
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
